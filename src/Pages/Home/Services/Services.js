@@ -10,7 +10,7 @@ const Services = () => {
         .then(data=>setServices(data))
     },[])
     return (
-        <div className='container  row g-1'>
+        <div className='container ' id='services'>
             <h5 className='my-4'>this is a services section in the pet of Home:{services.length}</h5>
             <div className='services-cont  '>
                 {
