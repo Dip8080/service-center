@@ -11,7 +11,7 @@ const Services = () => {
     },[])
     return (
         <div className='container ' id='services'>
-            <h5 className='my-4'>this is a services section in the pet of Home:{services.length}</h5>
+            <h5 className='my-4 text-center'>Our services</h5>
             <div className='services-cont  '>
                 {
                     services.map(x=><Service key={x.id} obj={x}></Service>)

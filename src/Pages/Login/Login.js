@@ -3,9 +3,19 @@ import React, { useRef } from 'react';
 import { Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+ 
+import './Login.css'
+import { GoogleAuthProvider ,signInWithPopup } from 'firebase/auth';
 import auth from '../../firebase.init';
 
+
 const Login = () => {
+    
+    const provider = new GoogleAuthProvider()
+    const googleSignin =()=>{
+        signInWithPopup(auth , provider)
+
+    }
     const emailref = useRef('');
     const passref = useRef ('');
     const nevigate = useNavigate();
@@ -34,9 +44,9 @@ const Login = () => {
     }
   
     return (
-        <div className='container w-50 mx-auto'>
+        <div className='container w-50 mx-auto '>
             <h1 className='text-warning text-center mt-3'>please log in</h1>
-            <Form onSubmit={Handlesubmit}>
+            <Form onSubmit={Handlesubmit} className='loginDiv'>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control ref={emailref} type="email" placeholder="Enter email" required/>
@@ -54,6 +64,10 @@ const Login = () => {
   </Form.Group>
   <Button variant="primary" type="submit">
     Submit
+  </Button>
+  <br/>
+  <Button onClick={googleSignin} className='p-2 my-4 w-30% rounded' variant="success" type="button">
+   Login with faceBook
   </Button>
 </Form>
 <p>new here ? <span className='text-danger p-auto' onClick={Handlereg}>please register</span> </p>

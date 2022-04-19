@@ -1,5 +1,6 @@
 import React from 'react';
 import {  useNavigate } from 'react-router-dom';
+import'./Service.css'
 
 const Service = ({obj}) => {
     const {id , name, price , description , img} = obj ;
@@ -14,7 +15,7 @@ const Service = ({obj}) => {
           <h5 className="card-title">{name}</h5>
           <h2 className="card-title">{price}</h2>
           <p className="card-text">{description}.</p>
-        <button onClick={()=>Handlebutton(id)} className="btn btn-dark rounded text-success">click me</button>
+        <button onClick={()=>Handlebutton(id)} className="btn btn-dark rounded text-success">Checkout</button>
         </div>
       </div>
     );

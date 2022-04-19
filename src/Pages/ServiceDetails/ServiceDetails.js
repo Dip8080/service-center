@@ -3,23 +3,18 @@ import { Link, useParams } from 'react-router-dom';
 
 const ServiceDetails = () => {
     const {serviceId} = useParams()
-    const [data,setData] = useState([]);
-    useEffect(()=>{
-        fetch('services.json')
-        .then(res=>res.json())
-        .then(data=>setData(data))
-    },[])
+   
     return (
-        <div>
-            <h2>service details page {serviceId}</h2>
-           
+        <div className='py-4 w-50 ms-auto'>
+            <h2 className=''> one more step . please click proceed .</h2>
             <div>
                 <Link to='/Checkout' >
-                    <button className='btn btn-primary'>proceed checkout</button>
+                    <button className='btn btn-primary '>proceed </button>
                 </Link>
             </div>
         </div>
     );
 };
+
 
 export default ServiceDetails;
