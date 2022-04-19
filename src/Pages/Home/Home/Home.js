@@ -5,7 +5,7 @@ import Services from '../Services/Services';
 const Home = () => {
     return (
         <div>
-            <h1>this is a home means bari</h1>
+            <h1 className='text-center text-dark py-4 my-4 shadow'>Iron-skull Fitness</h1>
             <Banner></Banner>
             <Services></Services>
 

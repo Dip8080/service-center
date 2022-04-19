@@ -9,6 +9,8 @@ import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Error from './Pages/Shared/Error/Error'
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import RequreAuth from './Pages/Login/RequreAuth/RequreAuth';
+import Checkout from './Pages/Checkout/Checkout';
 
 function App() {
   return (
@@ -19,8 +21,14 @@ function App() {
        <Route path='/service/:serviceId' element={<ServiceDetails></ServiceDetails>}></Route>
        <Route path='/about' element={<About></About>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
-       <Route path='*' element={<Error></Error>}></Route>
+       
        <Route path='/register' element={<Register></Register>}></Route>
+       <Route path='/Checkout' element={<RequreAuth><Checkout></Checkout></RequreAuth>}></Route>
+       
+
+      
+
+       <Route path='*' element={<Error></Error>}></Route>
       
      </Routes>
      <Footer></Footer>
